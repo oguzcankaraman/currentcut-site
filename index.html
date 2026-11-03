@@ -145,6 +145,12 @@ section{padding-block:80px;border-top:1px solid var(--rule)}
 .plans.four .price{font-size:2.2rem}
 h3.group{font-size:1.15rem;margin-top:44px}
 h3.group+.plans{margin-top:16px}
+.plans{align-items:start}
+.plan .gist{margin:-4px 0 0;font-size:.95rem}
+.plan details.more{border:0;padding:0;display:grid;gap:14px}
+.plan details.more summary{font:600 .9rem var(--f-body,inherit);color:var(--mute);justify-content:flex-start;gap:8px}
+.plan details.more summary::after{font-size:1rem}
+.plan details.more[open] summary{color:var(--ink)}
 .yearly{margin:-8px 0 0;font:400 .85rem var(--f-mono);color:var(--mute)}
 .addons{margin-top:8px;max-width:640px}
 .addons .alloc{margin-top:14px}
@@ -290,6 +296,8 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
       <div class="plan">
         <div class="top"><h3>Free sample</h3><span class="label">No login needed</span></div>
         <div class="price">$0</div>
+        <p class="gist">1 video · about 5 business days</p>
+        <details class="more"><summary>What's included</summary>
         <dl class="alloc">
           <dt>Videos</dt><dd>1</dd>
           <dt>Delivery (business days)</dt><dd>~5</dd>
@@ -299,11 +307,14 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
           <li>We pick it from your help center, or you name one</li>
           <li>Yours to keep. One per company</li>
         </ul>
+        </details>
         <a class="btn line" href="https://tally.so/r/zEj2Aq?source=site&amp;package=sample">Ask for a sample</a>
       </div>
       <div class="plan">
         <div class="top"><h3>Pilot</h3><span class="label">New videos</span></div>
         <div class="price">$490<small>once</small></div>
+        <p class="gist">5 new videos · 5 business days · free fixes for 30 days</p>
+        <details class="more"><summary>What's included</summary>
         <dl class="alloc">
           <dt>New videos</dt><dd>5</dd>
           <dt>Product areas</dt><dd>1</dd>
@@ -317,11 +328,14 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
           <li>Free fixes for 30 days, even if your UI changes</li>
           <li>90 days of UI watch: we tell you when a video goes stale</li>
         </ul>
+        </details>
         <a class="btn line" href="https://tally.so/r/zEj2Aq?source=site&amp;package=pilot">Book a Pilot</a>
       </div>
       <div class="plan">
         <div class="top"><h3>Refresh</h3><span class="label">Old videos, new UI</span></div>
         <div class="price">$490<small>once</small></div>
+        <p class="gist">5 old videos re-made · 5 business days</p>
+        <details class="more"><summary>What's included</summary>
         <dl class="alloc">
           <dt>Videos re-made</dt><dd>5</dd>
           <dt>Delivery (business days)</dt><dd>5</dd>
@@ -332,11 +346,14 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
           <li>A long video is split into short ones; each counts as one</li>
           <li>Written guide with every video</li>
         </ul>
+        </details>
         <a class="btn line" href="https://tally.so/r/zEj2Aq?source=site&amp;package=refresh">Book a Refresh</a>
       </div>
       <div class="plan">
         <div class="top"><h3>Redesign Sprint</h3><span class="label">After a big release</span></div>
         <div class="price">$1,490<small>once</small></div>
+        <p class="gist">Up to 15 videos · 10 business days</p>
+        <details class="more"><summary>What's included</summary>
         <dl class="alloc">
           <dt>Videos, new or re-made</dt><dd>≤ 15</dd>
           <dt>Delivery (business days)</dt><dd>10</dd>
@@ -346,6 +363,7 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
           <li>New navigation, new editor or rebrand: the core flows redone in one batch</li>
           <li>Written guide with every video; 50% off for plan customers</li>
         </ul>
+        </details>
         <a class="btn line" href="https://tally.so/r/zEj2Aq?source=site&amp;package=sprint">Book a Sprint</a>
       </div>
     </div>
@@ -356,6 +374,8 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
         <div class="top"><h3>Keep Current</h3><span class="label">Maintenance</span></div>
         <div class="price">$290<small>per month</small></div>
         <p class="yearly">or $2,900 a year (2 months free)</p>
+        <p class="gist">Up to 10 videos kept current · weekly check</p>
+        <details class="more"><summary>What's included</summary>
         <dl class="alloc">
           <dt>New videos</dt><dd>0</dd>
           <dt>Videos kept current</dt><dd>≤ 10</dd>
@@ -366,12 +386,15 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
           <li>For a library we made in a Pilot, Refresh or Sprint; videos and guides kept current</li>
           <li>Extra new video $120</li>
         </ul>
+        </details>
         <a class="btn line" href="https://tally.so/r/zEj2Aq?source=site&amp;package=keep-current">Book Keep Current</a>
       </div>
       <div class="plan main">
         <div class="top"><h3>Starter</h3><span class="label">Most teams</span></div>
         <div class="price">$790<small>per month</small></div>
         <p class="yearly">or $7,900 a year (2 months free)</p>
+        <p class="gist">5 new videos, then 2 a month · up to 15 kept current</p>
+        <details class="more"><summary>What's included</summary>
         <dl class="alloc">
           <dt>New videos in month 1</dt><dd>5</dd>
           <dt>New videos each month after</dt><dd>2</dd>
@@ -383,12 +406,15 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
           <li>Re-records, re-voicing and guide updates after UI changes included</li>
           <li>Unused new videos do not carry over</li>
         </ul>
+        </details>
         <a class="btn" href="https://tally.so/r/zEj2Aq?source=site&amp;package=starter"><span class="dot" aria-hidden="true"></span>Book Starter</a>
       </div>
       <div class="plan">
         <div class="top"><h3>Growth</h3><span class="label">Large help centers</span></div>
         <div class="price">$1,490<small>per month</small></div>
         <p class="yearly">or $14,900 a year (2 months free)</p>
+        <p class="gist">10 new videos, then 4 a month · up to 40 kept current</p>
+        <details class="more"><summary>What's included</summary>
         <dl class="alloc">
           <dt>New videos in month 1</dt><dd>10</dd>
           <dt>New videos each month after</dt><dd>4</dd>
@@ -400,6 +426,7 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
           <li>Premium voice included; videos and guides kept current</li>
           <li>We recommend a 15-min call to pick the flows</li>
         </ul>
+        </details>
         <a class="btn line" href="https://tally.so/r/zEj2Aq?source=site&amp;package=growth">Book Growth</a>
       </div>
     </div>
