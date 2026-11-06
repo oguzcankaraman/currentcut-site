@@ -28,23 +28,25 @@
 /* Layout: a spec sheet. Mono labels in a narrow left rail, content on the right;
    the hero pairs the promise with a weekly-check report, the product's real output. */
 :root{
-  --paper:#f4f5f2; --sheet:#ffffff; --ink:#121417; --mute:#5a6068; --rule:#dfe1dc;
-  --rec:#e8461b; --rec-ink:#ffffff; --rec-soft:#fde9e2;
+  --paper:#f5f6f8; --sheet:#ffffff; --ink:#0f1524; --mute:#586074; --rule:#dde1e8;
+  --rec:#1f3fae; --rec-ink:#ffffff; --rec-soft:#e7ecfb;
   --ok:#2f7d55; --ok-soft:#e3f1e9; --mark:#ffd84d;
   --f-display:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
   --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --r:10px;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#0f1112; --sheet:#171a1c; --ink:#eceeea; --mute:#9aa1a6; --rule:#2a2e31;
-  --rec:#ff6a3d; --rec-ink:#140804; --rec-soft:#3a1d13; --ok:#6cc596; --ok-soft:#14291e; --mark:#c9a92a;
-  color-scheme:dark}}
 :root[data-theme="dark"]{
-  --paper:#0f1112; --sheet:#171a1c; --ink:#eceeea; --mute:#9aa1a6; --rule:#2a2e31;
-  --rec:#ff6a3d; --rec-ink:#140804; --rec-soft:#3a1d13; --ok:#6cc596; --ok-soft:#14291e; --mark:#c9a92a;
+  --paper:#0d111c; --sheet:#151a28; --ink:#eceef4; --mute:#9aa3b5; --rule:#262d3f;
+  --rec:#8aa4ff; --rec-ink:#0a1020; --rec-soft:#1a2547; --ok:#6cc596; --ok-soft:#14291e; --mark:#c9a92a;
   color-scheme:dark}
 
+.ptabs{display:inline-flex;gap:4px;margin-top:28px;padding:4px;border:1px solid var(--rule);border-radius:999px;background:var(--sheet)}
+.ptabs button{font:600 .92rem var(--f-body);color:var(--mute);background:none;border:0;border-radius:999px;padding:9px 18px;cursor:pointer}
+.ptabs button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.js [data-panel][hidden]{display:none}
+.about{display:grid;gap:12px;max-width:44em}
+.about p{color:var(--mute)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
@@ -63,6 +65,10 @@ a{color:inherit}
 
 .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:999px;background:var(--rec);color:var(--rec-ink);text-decoration:none;font-weight:600;font-size:.98rem;transition:transform .15s ease}
 .btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.plan{transition:transform .2s ease,box-shadow .2s ease}
+.plan:hover{transform:translateY(-2px);box-shadow:0 18px 36px -24px rgba(0,0,0,.35)}
+.hero-film{box-shadow:0 24px 56px -30px rgba(0,0,0,.45)}
 .btn .dot{width:8px;height:8px;border-radius:50%;background:currentColor}
 .btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--rule)}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
@@ -81,8 +87,8 @@ nav .btn{padding:9px 16px;font-size:.9rem}
 .hero{padding-block:72px 64px}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .hero .sub{font-size:1.18rem;color:var(--mute);max-width:34em;margin-block:22px 30px}
-.hero .facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px}
-.hero mark{background:linear-gradient(transparent 58%,var(--mark) 58%);color:inherit;padding:0 .05em}
+.hero .facts{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:26px;text-transform:none;letter-spacing:0;font-size:.9rem}
+.hero mark{background:none;color:var(--rec);padding:0}
 
 .report{background:var(--sheet);border:1px solid var(--rule);border-radius:14px;box-shadow:0 1px 0 var(--rule),0 24px 48px -28px rgba(0,0,0,.35);overflow:hidden;min-width:0}
 .report header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:16px 20px;border-bottom:1px solid var(--rule)}
@@ -202,7 +208,7 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
   .steps li{grid-template-columns:1fr;gap:6px}
   .plan{padding:22px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.plan{transition:none}.plan:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -211,13 +217,13 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
   <a class="logo" href="#top"><i aria-hidden="true"></i>Currentcut</a>
   <div class="links">
     <a href="#demo">Demo</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
-    <a class="btn" href="https://tally.so/r/zEj2Aq?source=site">Get started</a>
+    <a class="btn" href="https://tally.so/r/zEj2Aq?source=site">Get a free sample</a>
   </div>
 </div></nav>
 
 <header class="hero" id="top"><div class="wrap">
   <div>
-    <p class="label">Tutorial videos for B2B SaaS help centers</p>
+    <p class="label">Done-for-you tutorial videos for B2B SaaS help centers</p>
     <h1 style="margin-top:18px">Help-center videos that <mark>never show an old UI.</mark></h1>
     <p class="sub">We make short product tutorials for your help center, then check your UI every week. When a screen changes, we re-record and re-voice the affected videos. You approve. You never record or edit anything.</p>
     <div class="btns">
@@ -227,17 +233,9 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
     <div class="facts label"><span>50–90 s per video</span><span>Voice-over synced to clicks</span><span>Written guide included</span></div>
   </div>
 
-  <article class="report" aria-label="Example weekly UI check report">
-    <header><strong>Weekly UI check</strong><span class="label">Example · Mon 06:00 UTC</span></header>
-    <ol>
-      <li><span>invite-a-teammate</span><span class="chip ok">unchanged</span></li>
-      <li><span>create-first-project</span><span class="chip ch">step 3 changed · re-recorded</span></li>
-      <li><span>connect-slack-integration</span><span class="chip ok">unchanged</span></li>
-      <li><span>export-report-as-csv</span><span class="chip ch">button renamed · re-recorded</span></li>
-      <li><span>set-up-billing</span><span class="chip ok">unchanged</span></li>
-    </ol>
-    <footer><span>12 flows checked · 2 changed</span><span>2 approvals sent</span></footer>
-  </article>
+  <figure class="film hero-film" style="margin:0">
+    <video controls preload="metadata" playsinline poster="hero-poster.jpg"><source src="sample-guide.mp4" type="video/mp4">Your browser cannot play this video.</video>
+  </figure>
 </div></header>
 
 <section id="demo"><div class="wrap row">
@@ -247,7 +245,6 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
     <p class="lead">First, a tutorial recorded against an earlier version of an app. Then the same video after the interface changed and Currentcut regenerated it: new screens, new voice-over, no manual work.</p>
     <figure class="film" style="margin-inline:0">
       <video controls preload="metadata" playsinline poster="poster.jpg"><source src="before_after.mp4" type="video/mp4">Your browser cannot play this video.</video>
-      <figcaption><span>Before → after, regenerated automatically</span><span>8.8 min of machine time</span></figcaption>
     </figure>
     <div class="guide-demo">
       <div>
@@ -305,6 +302,11 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
     <h2>Start with one project. Keep it current with a plan.</h2>
     <p class="lead">Every scope below is fixed, so you can book with a 3-minute form. Booking takes no payment: we reply within one business day with the flows, the delivery date and the price, and you pay once you have approved that scope, before work starts. A call is optional.</p>
 
+    <div class="ptabs" role="tablist" aria-label="Pricing type">
+      <button type="button" role="tab" aria-selected="true" data-tab="projects">One-off projects</button>
+      <button type="button" role="tab" aria-selected="false" data-tab="plans">Monthly plans</button>
+    </div>
+    <div data-panel="projects">
     <h3 class="group">One-off projects</h3>
     <div class="plans four">
       <div class="plan">
@@ -382,6 +384,8 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
       </div>
     </div>
 
+    </div>
+    <div data-panel="plans">
     <h3 class="group">Plans: we keep your library current</h3>
     <div class="plans three">
       <div class="plan">
@@ -445,6 +449,8 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
       </div>
     </div>
 
+    </div>
+
     <div class="addons">
       <h3 class="group">Add-ons</h3>
       <dl class="alloc">
@@ -480,12 +486,21 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
   </div>
 </div></section>
 
+<section id="about"><div class="wrap row">
+  <p class="label">Who you work with</p>
+  <div class="about">
+    <h2>One person, one point of contact.</h2>
+    <p>Hi, I'm Oğuzcan. I build and run Currentcut myself, so you talk to the person who records your videos, not a ticket queue. I wrote the pipeline that records, checks and re-voices the flows; you give me a demo account and approve the results.</p>
+    <p>Not sure yet? The free sample costs nothing and needs no login: you see the quality before sharing anything. Or <a href="https://cal.com/oguzcan-karaman-fwmsln/currentcut-intro">book a 15-minute call</a>.</p>
+  </div>
+</div></section>
+
 <section class="final"><div class="wrap">
   <div>
     <h2>See it on your own product.</h2>
     <p>Tell us about your help center in a 3-minute form. We reply within one business day with a free sample idea, the first flows and a clear scope. Prefer to talk? <a href="https://cal.com/oguzcan-karaman-fwmsln/currentcut-intro">Book a 15-min call</a>.</p>
   </div>
-  <a class="btn" href="https://tally.so/r/zEj2Aq?source=site"><span class="dot" aria-hidden="true"></span>Get started</a>
+  <a class="btn" href="https://tally.so/r/zEj2Aq?source=site"><span class="dot" aria-hidden="true"></span>Get a free sample</a>
 </div></section>
 
 <footer class="site"><div class="wrap">
@@ -494,5 +509,13 @@ footer.site .legal{font:400 .8rem/1.6 var(--f-mono)}
   <div class="legal">Oğuzcan Karaman<br>Çankaya, Ankara, Türkiye<br><span>oguz@currentcut.app</span><br>© 2026 Currentcut</div>
 </div></footer>
 
+<script>
+(function(){document.documentElement.classList.add('js');
+var tabs=document.querySelectorAll('.ptabs button'),panels=document.querySelectorAll('[data-panel]');
+function show(n){tabs.forEach(function(b){b.setAttribute('aria-selected',String(b.dataset.tab===n))});
+panels.forEach(function(p){p.hidden=p.dataset.panel!==n})}
+tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.tab)})});
+if(tabs.length)show('projects')})();
+</script>
 </body>
 </html>
