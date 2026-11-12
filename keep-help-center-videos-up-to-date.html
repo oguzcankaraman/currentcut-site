@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Keep Help-Center Videos Up to Date | Currentcut</title>
+<meta name="description" content="Product videos in a help center go stale after every UI release. A practical process to keep them current: what to record, how to track UI changes, and how to refresh without re-editing.">
+<link rel="canonical" href="https://currentcut.app/keep-help-center-videos-up-to-date.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Currentcut">
+<meta property="og:url" content="https://currentcut.app/keep-help-center-videos-up-to-date.html">
+<meta property="og:title" content="How to keep help-center videos up to date">
+<meta property="og:description" content="A practical process for keeping product tutorial videos in sync with a changing UI.">
+<meta property="og:image" content="https://currentcut.app/og-image.png">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"How to keep help-center videos up to date","author":{"@type":"Person","name":"Oğuzcan Karaman"},"publisher":{"@id":"https://currentcut.app/#org"},"datePublished":"2026-11-12","dateModified":"2026-11-12","mainEntityOfPage":"https://currentcut.app/keep-help-center-videos-up-to-date.html"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How often should help-center videos be updated?","acceptedAnswer":{"@type":"Answer","text":"Whenever the screen a video shows changes in a way a viewer would notice: a moved menu, a renamed button, a new step. Check against each release, not on a calendar."}},
+{"@type":"Question","name":"Should I delete old tutorial videos?","acceptedAnswer":{"@type":"Answer","text":"If a video shows steps that no longer work, remove or replace it. A wrong video costs more support time than no video."}},
+{"@type":"Question","name":"How long should a help-center video be?","acceptedAnswer":{"@type":"Answer","text":"One task per video, usually 50 to 90 seconds. Short videos are cheaper to re-record when the UI changes."}}]}
+]}
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+:root{--ink:#0f1524;--mute:#586074;--rule:#dde1e8;--bg:#fff;--card:#f5f6f8;--accent:#1f3fae;--on:#fff}
+@media (prefers-color-scheme:dark){:root{--ink:#eceef4;--mute:#9aa3b5;--rule:#262d3f;--bg:#0d111c;--card:#151a28;--accent:#8aa4ff;--on:#0a1020}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+nav,main,footer{max-width:720px;margin:0 auto;padding:0 20px}
+nav{padding-top:24px;display:flex;justify-content:space-between;font-size:.95rem}
+nav a{color:var(--ink);text-decoration:none;font-weight:700}
+h1{font-size:2.2rem;line-height:1.15;letter-spacing:-.02em;margin:40px 0 12px}
+h2{font-size:1.45rem;line-height:1.3;margin:44px 0 12px}
+p,li{margin:0 0 16px}
+ul,ol{padding-left:1.3em}
+a{color:var(--accent)}
+.lede{color:var(--mute);font-size:1.15rem}
+.meta{color:var(--mute);font-size:.9rem}
+.box{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px 22px;margin:28px 0}
+.cta{display:inline-block;background:var(--accent);color:var(--on);padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600}
+footer{padding-top:40px;padding-bottom:60px;color:var(--mute);font-size:.9rem;border-top:1px solid var(--rule);margin-top:56px}
+@media (max-width:480px){h1{font-size:1.8rem}}
+</style></head>
+<body>
+<nav><a href="/">Currentcut</a><a href="/#faq" style="font-weight:400">FAQ</a></nav>
+<main>
+<h1>How to keep help-center videos up to date</h1>
+<p class="meta">By Oğuzcan Karaman · Updated Nov 12, 2026</p>
+<p class="lede">A tutorial video is accurate on the day it is published and starts drifting on the next release. Most teams do not have a video problem, they have a maintenance problem. Here is a process that keeps videos in sync with the product without a re-edit every sprint.</p>
+
+<h2>Why help-center videos go stale</h2>
+<p>Articles are text: changing a button name is a one-minute edit. A video bakes the old screen, the old voice-over and the old timing into one file, so a small UI change means re-recording, re-editing and re-uploading. That cost is why a 2021 video often sits next to an article that was edited last month.</p>
+<p>The result is visible to users: they follow the video, the menu is not where it says, and they open a support ticket instead.</p>
+
+<h2>A five-step process</h2>
+<ol>
+<li><strong>Keep one task per video.</strong> "Create a survey from a template", not "Getting started with everything". Short, single-task videos (about 50 to 90 seconds) are the only kind you can afford to redo.</li>
+<li><strong>Keep a list of every video and where it is embedded.</strong> A spreadsheet is enough: title, flow shown, articles that embed it, publish date, last checked date. You cannot refresh what you cannot find.</li>
+<li><strong>Tie each video to a product area.</strong> When a release touches that area (check the changelog or release notes), the video is flagged for a check. This is the step teams skip, and it is what turns "update when we remember" into a routine.</li>
+<li><strong>Script the flow so it can be replayed.</strong> Write the exact click path and the narration as text. When the UI changes you fix the affected steps and re-record, instead of improvising a new take.</li>
+<li><strong>Re-record and replace in place.</strong> Keep the same embed or URL so articles, onboarding emails and in-app links keep working. Record the old and new version side by side once so you can see what changed.</li>
+</ol>
+
+<h2>What to check on each release</h2>
+<ul>
+<li>Menu and navigation names or positions that the video shows.</li>
+<li>Button labels and screens in the click path.</li>
+<li>Any step the video skips that is now required.</li>
+<li>Plan or permission changes that hide a feature the video uses.</li>
+<li>Narration that mentions a name, a number or a layout.</li>
+</ul>
+<p>If a video fails any of these, replace it. A wrong video is worse than none, because the viewer trusts it.</p>
+
+<h2>Do it yourself or hand it off</h2>
+<p>Doing it in-house works when you have a person who owns it and a release process that tells them what changed. If nobody owns it, videos drift, which is the usual case for small product and support teams.</p>
+<div class="box">
+<p><strong>That is the part Currentcut takes over.</strong> We record short studio-style videos of your product on a demo account, and re-record and re-voice them when your UI changes, so you approve the result instead of recording or editing anything. We start with one free sample on your current app.</p>
+<p style="margin:0"><a class="cta" href="/">See how it works</a></p>
+</div>
+
+<h2>Related</h2>
+<ul>
+<li><a href="/help-center-video-audit-checklist.html">Help-center video audit checklist: how to find outdated videos</a></li>
+<li><a href="/sample-guide.html">Sample written guide generated from one recording</a></li>
+</ul>
+</main>
+<footer>Currentcut · Oğuzcan Karaman · Çankaya, Ankara, Türkiye · <a href="mailto:oguz@currentcut.app">oguz@currentcut.app</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></footer>
+</body></html>
